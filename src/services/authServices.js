@@ -17,9 +17,10 @@ export const addPointService = async (weight) => {
       abi,
       signer
     );
-    await lifeSourceManager.addPointFromWeight(weight);
+    await lifeSourceManager.addPointFromWeight(Math.trunc(weight));
     return true;
   } catch (error) {
+    console.log(error);
     return false;
   }
 };
@@ -34,7 +35,7 @@ export const redeemCodeService = async (point) => {
       abi,
       signer
     );
-    await lifeSourceManager.redeemCode(point);
+    await lifeSourceManager.redeemCode(Math.trunc(point));
     return true;
   } catch (error) {
     console.log(error);
