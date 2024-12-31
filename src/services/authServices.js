@@ -2,11 +2,6 @@
 import abi from "@/assets/json/abi.json";
 import { ethers } from "ethers";
 
-const lifeSourceManager = new ethers.Contract(
-  "0x04A24B8894fAf25989d47B2DeF745Ed098258b16",
-  abi
-);
-
 async function switchOrAddSepolia(signer) {
   const chainId = await signer.provider.request({ method: "eth_chainId" });
   const sepoliaChainId = "0xaa36a7";
@@ -63,12 +58,11 @@ const getContract = async () => {
   const signer = provider.getSigner();
   // ensure chain is sepolia
   await switchOrAddSepolia(signer);
-  const lifeSourceManager = new ethers.Contract(
+  return new ethers.Contract(
     "0x04A24B8894fAf25989d47B2DeF745Ed098258b16",
     abi,
     signer
   );
-  return lifeSourceManager;
 };
 
 export const addPointService = async (weight) => {
