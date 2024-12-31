@@ -1,6 +1,6 @@
 # Life Source
 
-This is a solution that rewards users with token for recycling and use them to uphold the SDG goals
+This is a solution that rewards users with token for recycling and use them to uphold the SDG goals (on Sepolia - 11155111)
 
 - Clean Water and Sanitation
 - Climate Action
