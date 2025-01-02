@@ -13,7 +13,7 @@ const WalletContext = createContext();
 
     try {
       if (!window.ethereum) {
-        alert('MetaMask is not installed. Please install it to use this feature.');
+        toast.info('MetaMask is not installed. Please install it to use this feature.');
         return;
       }
 

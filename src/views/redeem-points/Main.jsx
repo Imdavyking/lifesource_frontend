@@ -9,15 +9,24 @@ import garbageImage from "@/assets/images/garbage.svg";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { redeemCodeService } from "@/services/authServices";
+import { getPointsService } from "../../services/authServices";
 
 
 function Main() {
 	useEffect(() => {
 		dom("body").removeClass("main").removeClass("error-page").addClass("login");
-	}, [] );
+		getPointsService().then(accPoints => {
+			console.log(accPoints)
+			setAccumulatedPoints(accPoints)
+		})
+	}, []);
+
+
 	const navigate = useNavigate();
 
 	const [points, setPoints] = useState("");
+
+	const [accumulatedPoints,setAccumulatedPoints]= useState(0);
 
 	const handleChange = (setState) => (e) => {
 		setState(e.target.value);
@@ -83,7 +92,7 @@ function Main() {
 							</a>
 							<div className="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
 								<h2 className="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
-                Redeem your points to earn money.
+                Redeem your points to earn money. {accumulatedPoints} LFT
 								</h2>
 								<div className="intro-x mt-2 text-slate-400 dark:text-slate-400 xl:hidden text-center">
 									...Blockchain-powered recycling solution
