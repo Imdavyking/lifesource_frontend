@@ -127,7 +127,7 @@ function Main() {
 											
 																			
 									</button>
-									<Link to="/redeem-points">
+									<Link to="/add-points">
 										<button className="btn btn-outline-secondary py-3 px-4 w-full  xl:w-32 mt-3 xl:mt-0 align-top">
 
 											
