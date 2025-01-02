@@ -63,7 +63,7 @@ function Main(props) {
 						role="button"
 						className="w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
 						<img
-							alt="LifeSource "
+							alt="LifeSource"
 							src={$f()[9].photos[0]}
 						/>
 					</DropdownToggle>

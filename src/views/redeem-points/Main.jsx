@@ -69,7 +69,7 @@ function Main() {
 						<div className="hidden xl:flex flex-col min-h-screen">
 							<a href="/" className="-intro-x flex items-center pt-5">
 								<img
-									alt="LifeSource "
+									alt="LifeSource"
 									className="w-6"
 									src={logoUrl}
 								/>
@@ -77,7 +77,7 @@ function Main() {
 							</a>
 							<div className="my-auto">
 								<img
-									alt="LifeSource "
+									alt="LifeSource"
 									className="-intro-x w-1/2 -mt-16"
 									src={garbageImage}
 								/>
@@ -94,7 +94,7 @@ function Main() {
 						<div className="h-screen xl:h-auto flex flex-col items-center py-5 xl:py-0  xl:my-0">
 							<a href="/" className="-intro-x flex items-center pt-5 my-2">
 								<img
-									alt="LifeSource "
+									alt="LifeSource"
 									className="w-6"
 									src={logoUrl}
 								/>

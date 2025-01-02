@@ -49,7 +49,7 @@ function Main() {
             className="-intro-x hidden md:flex"
           >
             <img
-              alt="LifeSource "
+              alt="LifeSource"
               className="w-6"
               src={logoUrl}
             />
@@ -131,7 +131,7 @@ function Main() {
                     >
                       <div className="w-8 h-8 image-fit">
                         <img
-                          alt="LifeSource "
+                          alt="LifeSource"
                           className="rounded-full"
                           src={faker.photos[0]}
                         />
@@ -148,7 +148,7 @@ function Main() {
                   <a key={fakerKey} href="" className="flex items-center mt-2">
                     <div className="w-8 h-8 image-fit">
                       <img
-                        alt="LifeSource "
+                        alt="LifeSource"
                         className="rounded-full"
                         src={faker.images[0]}
                       />
@@ -188,7 +188,7 @@ function Main() {
                   >
                     <div className="w-12 h-12 flex-none image-fit mr-1">
                       <img
-                        alt="LifeSource "
+                        alt="LifeSource"
                         className="rounded-full"
                         src={faker.photos[0]}
                       />
@@ -221,7 +221,7 @@ function Main() {
               className="w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110"
             >
               <img
-                alt="LifeSource "
+                alt="LifeSource"
                 src={$f()[9].photos[0]}
               />
             </DropdownToggle>

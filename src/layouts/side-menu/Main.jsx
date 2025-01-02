@@ -41,7 +41,7 @@ function Main() {
             className="intro-x flex items-center pl-5 pt-4"
           >
             <img
-              alt="LifeSource "
+              alt="LifeSource"
               className="w-6"
               src={logoUrl}
             />
