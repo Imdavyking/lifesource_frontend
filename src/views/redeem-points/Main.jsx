@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { redeemCodeService } from "@/services/authServices";
 import { getPointsService } from "../../services/authServices";
+import {FaSpinner} from "react-icons/fa";
 
 
 function Main() {
@@ -32,6 +33,8 @@ function Main() {
 		setState(e.target.value);
 	};
 
+	const [isRedeeming,setIsRedeeming] = useState(false)
+
 	const handleClick = async () => {
 		if (
 			points === ""
@@ -39,6 +42,7 @@ function Main() {
 			toast.error("Please fill all fields");
 		} else {
 			try {
+				setIsRedeeming(true)
 				const response = await redeemCodeService(points);
 				toast.success( response.data.message );
 				getPointsService().then(accPoints => {
@@ -49,6 +53,8 @@ function Main() {
 				// history.push("/login");
 			} catch (e) {
 				toast.error(e.message);
+			}finally{
+				setIsRedeeming(false)
 			}
 		}
 	};
@@ -116,11 +122,15 @@ function Main() {
 								<div className="intro-x mt-5 xl:mt-8 text-center xl:text-left">
 									<button
 										className="btn btn-primary py-3 px-4 w-full xl:w-64 xl:mr-3 align-top"
-										onClick={handleClick}>
-																			Redeem Points
+										onClick={handleClick} disabled={isRedeeming}>
+											{isRedeeming ? <FaSpinner className="w-5 h-5 animate-spin"/>: 'Redeem Points'}
+											
+																			
 									</button>
 									<Link to="/redeem-points">
 										<button className="btn btn-outline-secondary py-3 px-4 w-full  xl:w-32 mt-3 xl:mt-0 align-top">
+
+											
                     Add Point 
 										</button>
 									</Link>

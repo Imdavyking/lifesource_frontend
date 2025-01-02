@@ -16,6 +16,7 @@ function Main() {
 		dom("body").removeClass("main").removeClass("error-page").addClass("login");
 	}, [] );
 	const navigate = useNavigate();
+	const [isAddingPoints,setIsAddingPoints] = useState(false)
 
 	const [weight, setWeight] = useState("");
 
@@ -30,7 +31,7 @@ function Main() {
 			toast.error("Please fill all fields");
 		} else {
 			try {
-				
+				setIsAddingPoints(true)
 
 				const response = await addPointService(weight);
 				toast.success( response.data.message );
@@ -38,6 +39,8 @@ function Main() {
 				// history.push("/login");
 			} catch (e) {
 				toast.error(e.message);
+			}finally{
+				setIsAddingPoints(false)
 			}
 
 		
@@ -107,8 +110,8 @@ function Main() {
 								<div className="intro-x mt-5 xl:mt-8 text-center xl:text-left">
 									<button
 										className="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top"
-										onClick={handleClick}>
-										Add Point
+										onClick={handleClick}  disabled={isAddingPoints}>
+										{isAddingPoints ? <FaSpinner className="w-5 h-5 animate-spin"/>: 'Add Points'}
 									</button>
 									<Link to="/redeem-points">
 										<button className="btn btn-outline-secondary py-3 px-4 w-full xl:w-64 mt-3 xl:mt-0 align-top">
