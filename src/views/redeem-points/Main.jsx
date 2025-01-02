@@ -17,7 +17,6 @@ function Main() {
 	useEffect(() => {
 		dom("body").removeClass("main").removeClass("error-page").addClass("login");
 		getPointsService().then(accPoints => {
-			console.log(accPoints)
 			setAccumulatedPoints(accPoints)
 		}).catch(err => toast.error(err))
 	}, []);
@@ -46,13 +45,13 @@ function Main() {
 				const response = await redeemCodeService(points);
 				toast.success( response);
 				getPointsService().then(accPoints => {
-					console.log(accPoints)
 					setAccumulatedPoints(accPoints)
 				}).catch(err => toast.error(err))
 				// navigate( "/" );
 				// history.push("/login");
 			} catch (e) {
-				toast.error(e.message);
+				console.log("eeeee")
+				toast.error(e);
 			}finally{
 				setIsRedeeming(false)
 			}

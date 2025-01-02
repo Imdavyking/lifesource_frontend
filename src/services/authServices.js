@@ -77,7 +77,8 @@ const getContract = async () => {
 export const addPointService = async (weight) => {
   try {
     const lifeSourceManager = await getContract();
-    await lifeSourceManager.addPointFromWeight(Math.trunc(weight));
+    const tx = await lifeSourceManager.addPointFromWeight(Math.trunc(weight));
+    await tx.wait(1);
     return true;
   } catch (error) {
     console.log(error);
@@ -102,7 +103,8 @@ export const getPointsService = async () => {
 export const redeemCodeService = async (point) => {
   try {
     const lifeSourceManager = await getContract();
-    await lifeSourceManager.redeemCode(Math.trunc(point));
+    const tx = await lifeSourceManager.redeemCode(Math.trunc(point));
+    await tx.wait(1);
     return true;
   } catch (error) {
     console.log(error);
