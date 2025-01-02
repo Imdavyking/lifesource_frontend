@@ -2,14 +2,16 @@
 import abi from "@/assets/json/abi.json";
 import { ethers } from "ethers";
 
-async function switchOrAddSepolia(signer) {
+async function switchOrAddSepolia(ethProvider) {
   try {
-    const chainId = await signer.provider.request({ method: "eth_chainId" });
+    const chainId = await ethProvider.provider.request({
+      method: "eth_chainId",
+    });
     const sepoliaChainId = "0xaa36a7";
     // Check if the current chain is Sepolia Testnet
     if (chainId !== sepoliaChainId) {
       // Try to switch to Sepolia Testnet
-      await signer.provider.request({
+      await ethProvider.provider.request({
         method: "wallet_switchEthereumChain",
         params: [{ chainId: sepoliaChainId }], // Sepolia Testnet Chain ID
       });
@@ -20,7 +22,7 @@ async function switchOrAddSepolia(signer) {
 
         // If the chain is not added to the wallet, add it
 
-        await signer.provider.request({
+        await ethProvider.provider.request({
           method: "wallet_addEthereumChain",
           params: [
             {
@@ -64,7 +66,7 @@ const getContract = async () => {
   }
   const signer = getSigner();
   // ensure chain is sepolia
-  await switchOrAddSepolia(signer);
+  await switchOrAddSepolia(signer.provider);
   return new ethers.Contract(
     "0x04A24B8894fAf25989d47B2DeF745Ed098258b16",
     abi,
