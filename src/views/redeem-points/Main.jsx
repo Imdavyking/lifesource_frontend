@@ -18,7 +18,7 @@ function Main() {
 		getPointsService().then(accPoints => {
 			console.log(accPoints)
 			setAccumulatedPoints(accPoints)
-		})
+		}).catch(err => toast.error(err))
 	}, []);
 
 
@@ -41,7 +41,11 @@ function Main() {
 			try {
 				const response = await redeemCodeService(points);
 				toast.success( response.data.message );
-				navigate( "/" );
+				getPointsService().then(accPoints => {
+					console.log(accPoints)
+					setAccumulatedPoints(accPoints)
+				}).catch(err => toast.error(err))
+				// navigate( "/" );
 				// history.push("/login");
 			} catch (e) {
 				toast.error(e.message);
