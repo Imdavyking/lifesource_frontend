@@ -6,7 +6,7 @@ import { sideMenu as useSideMenuStore } from "@/stores/side-menu";
 import { useRecoilValue } from "recoil";
 import { linkTo, nestedMenu, enter, leave } from "./index";
 import { Lucide } from "@/base-components";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/logo.png";
 import classnames from "classnames";
 import TopBar from "@/components/top-bar/Main";
 import MobileMenu from "@/components/mobile-menu/Main";

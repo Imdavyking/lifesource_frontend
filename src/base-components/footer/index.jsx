@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

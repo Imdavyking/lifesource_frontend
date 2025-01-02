@@ -5,7 +5,7 @@ import DarkModeSwitcher from "@/components/dark-mode-switcher/Main";
 import { Link } from "react-router-dom";
 import Footer from "@/base-components/footer";
 import dom from "@left4code/tw-starter/dist/js/dom";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/logo.png";
 import illustrationUrl from "@/assets/images/illustration.svg";
 import blockchainForGood from "@/assets/images/blockchain-for-good.png";
 import { useWallet } from "@/App";

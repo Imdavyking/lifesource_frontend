@@ -16,7 +16,7 @@ import {
   DropdownHeader,
   DropdownDivider,
 } from "@/base-components";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/logo.png";
 import classnames from "classnames";
 import MobileMenu from "@/components/mobile-menu/Main";
 import MainColorSwitcher from "@/components/main-color-switcher/Main";

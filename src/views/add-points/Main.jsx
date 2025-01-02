@@ -3,7 +3,7 @@
 import DarkModeSwitcher from "@/components/dark-mode-switcher/Main";
 import { Link, useNavigate } from "react-router-dom";
 import dom from "@left4code/tw-starter/dist/js/dom";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/logo.png";
 import illustrationUrl from "@/assets/images/illustration.svg";
 import garbageImage from "@/assets/images/garbage.svg";
 import { useEffect, useState } from "react";

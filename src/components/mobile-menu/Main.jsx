@@ -7,7 +7,7 @@ import { useRecoilValue } from "recoil";
 import { nestedMenu } from "@/layouts/side-menu";
 import { toggleMobileMenu, linkTo, enter, leave } from "./index";
 import { Lucide } from "@/base-components";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/logo.png";
 import classnames from "classnames";
 import dom from "@left4code/tw-starter/dist/js/dom";
 import SimpleBar from "simplebar";
