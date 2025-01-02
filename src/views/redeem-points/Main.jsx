@@ -27,7 +27,7 @@ function Main() {
 
 	const [points, setPoints] = useState("");
 
-	const [accumulatedPoints,setAccumulatedPoints]= useState(0);
+	const [accumulatedPoints,setAccumulatedPoints]= useState('****');
 
 	const handleChange = (setState) => (e) => {
 		setState(e.target.value);
