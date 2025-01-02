@@ -9,7 +9,7 @@ import garbageImage from "@/assets/images/garbage.svg";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { addPointService } from "@/services/authServices";
-
+import {FaSpinner} from "react-icons/fa";
 
 function Main() {
 	useEffect(() => {
@@ -34,16 +34,14 @@ function Main() {
 				setIsAddingPoints(true)
 
 				const response = await addPointService(weight);
-				toast.success( response.data.message );
-				navigate( "/" );
+				toast.success( response);
+				// navigate( "/" );
 				// history.push("/login");
 			} catch (e) {
 				toast.error(e.message);
 			}finally{
 				setIsAddingPoints(false)
 			}
-
-		
 		}
 	};
 
@@ -55,9 +53,9 @@ function Main() {
 					<div className="block xl:grid grid-cols-2 gap-4">
 						{/* BEGIN: Register Info */}
 						<div className="hidden xl:flex flex-col min-h-screen">
-							<a href="" className="-intro-x flex items-center pt-5">
+							<a href="/" className="-intro-x flex items-center pt-5">
 								<img
-									alt="Midone Tailwind HTML Admin Template"
+									alt="LifeSource "
 									className="w-6"
 									src={logoUrl}
 								/>
@@ -65,7 +63,7 @@ function Main() {
 							</a>
 							<div className="my-auto">
 								<img
-									alt="Midone Tailwind HTML Admin Template"
+									alt="LifeSource "
 									className="-intro-x w-1/2 -mt-16"
 									src={garbageImage}
 								/>
@@ -80,9 +78,9 @@ function Main() {
 						{/* END: Register Info */}
 						{/* BEGIN: Register Form */}
 						<div className="h-screen xl:h-auto flex flex-col items-center py-5 xl:py-0  xl:my-0">
-							<a href="" className="-intro-x flex items-center pt-5 my-2">
+							<a href="/" className="-intro-x flex items-center pt-5 my-2">
 								<img
-									alt="Midone Tailwind HTML Admin Template"
+									alt="LifeSource "
 									className="w-6"
 									src={logoUrl}
 								/>

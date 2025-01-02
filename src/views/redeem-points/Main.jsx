@@ -44,7 +44,7 @@ function Main() {
 			try {
 				setIsRedeeming(true)
 				const response = await redeemCodeService(points);
-				toast.success( response.data.message );
+				toast.success( response);
 				getPointsService().then(accPoints => {
 					console.log(accPoints)
 					setAccumulatedPoints(accPoints)
@@ -67,9 +67,9 @@ function Main() {
 					<div className="block xl:grid grid-cols-2 gap-4">
 						{/* BEGIN: Register Info */}
 						<div className="hidden xl:flex flex-col min-h-screen">
-							<a href="" className="-intro-x flex items-center pt-5">
+							<a href="/" className="-intro-x flex items-center pt-5">
 								<img
-									alt="Midone Tailwind HTML Admin Template"
+									alt="LifeSource "
 									className="w-6"
 									src={logoUrl}
 								/>
@@ -77,7 +77,7 @@ function Main() {
 							</a>
 							<div className="my-auto">
 								<img
-									alt="Midone Tailwind HTML Admin Template"
+									alt="LifeSource "
 									className="-intro-x w-1/2 -mt-16"
 									src={garbageImage}
 								/>
@@ -92,9 +92,9 @@ function Main() {
 						{/* END: Register Info */}
 						{/* BEGIN: Register Form */}
 						<div className="h-screen xl:h-auto flex flex-col items-center py-5 xl:py-0  xl:my-0">
-							<a href="" className="-intro-x flex items-center pt-5 my-2">
+							<a href="/" className="-intro-x flex items-center pt-5 my-2">
 								<img
-									alt="Midone Tailwind HTML Admin Template"
+									alt="LifeSource "
 									className="w-6"
 									src={logoUrl}
 								/>

@@ -37,7 +37,7 @@ function Main(props) {
         <div className="mobile-menu-bar">
           <a href="" className="flex mr-auto">
             <img
-              alt="Midone Tailwind HTML Admin Template"
+              alt="LifeSource "
               className="w-6"
               src={logoUrl}
             />
