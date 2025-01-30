@@ -68,7 +68,7 @@ const getContract = async () => {
   // ensure chain is sepolia
   await switchOrAddSepolia(signer.provider);
   return new ethers.Contract(
-    "0x5c43900216E26FE826e067db52763A53756BcE65",
+    "0xEb2b42Ae7aC8cf5974413c6a8FDc9a5b26aa49cD",
     abi,
     signer
   );
